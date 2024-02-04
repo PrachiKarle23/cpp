@@ -3,3 +3,16 @@
   ***
    **
     *
+
+
+for(int i=4;i>=0;i--){
+       for(int j=0;j<5;j++){
+           if(j<(5-i-1)){
+               cout<<" ";
+           }
+           else{
+               cout<<"*";
+           }
+       }
+       cout<<endl;
+   }
