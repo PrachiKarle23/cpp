@@ -1,0 +1,15 @@
+long long fact(int n){
+    if(n==0){
+        return 1;
+    }
+    long long small=fact(n-1);
+    long long big=n*small;
+    return big;
+}
+void factorial(int n)
+{
+   long long ans=fact(n);
+   cout<<ans;
+}
+
+
