@@ -1,0 +1,16 @@
+
+#include <iostream>
+#include <bitset>
+using namespace std;
+int main() {
+    int decimal=55;
+    int temp=decimal,octal=0,place=1;
+    while(temp){
+        int d=temp%8;
+        temp/=8;
+        octal+=d * place;
+        place*=10;
+    }
+    cout<<octal;
+    return 0;
+}
