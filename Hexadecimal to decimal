@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<cmath>
+using namespace std;
+int hextoInt(char digit)
+{
+    if(digit>='0' && digit<='9')
+    {
+        return int(digit-'0');
+    }
+     else if (digit >= 'A' && digit <= 'F') {
+        return int(digit - 'A' + 10);
+    }
+    else if (digit >= 'a' && digit <= 'f') {
+        return int(digit - 'a' + 10);
+    }
+    return -1;
+}
+int main() {
+    string hex="67";
+    int n=hex.length();
+    int dec=0,place=0;
+    for(int i=n-1;i>=0;i--){
+        int digit=hextoInt(hex[i]);
+        dec+=digit * pow(16,place);
+        ++place;
+    }
+    cout<<dec<<endl;
+    return 0;
+}
