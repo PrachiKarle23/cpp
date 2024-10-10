@@ -1,0 +1,39 @@
+// Sample Input1 :
+1 
+5
+// Sample Output1 :
+    1
+   232
+  34543
+ 4567654
+567898765
+
+//code
+#include <bits/stdc++.h>
+vector<string> TrianglePattern(int N) {
+  vector<string> ans;
+  int cnt = 1;
+  string a = "";
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < (N - i + 1) - 2; j++) {
+      a += " ";
+    }
+    int k = i;
+    for (int j = 0; j < cnt; j++) {
+      if (j <= i) {
+        k++;
+        a += to_string(k);
+
+      } else {
+        k--;
+        if (k != 0) {
+          a += to_string(k);
+        }
+      }
+    }
+    ans.push_back(a);
+    a.clear();
+    cnt = cnt + 2;
+  }
+  return ans;
+}
