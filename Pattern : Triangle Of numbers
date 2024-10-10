@@ -37,3 +37,46 @@ vector<string> TrianglePattern(int N) {
   }
   return ans;
 }
+
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int cnt=1;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<(n-i+1);j++)
+        {
+            cout<<" ";
+        }
+        int k=i;
+        for(int j=0;j<cnt;j++)
+        {
+            if(j<=i)
+            {
+                k++;
+                cout<<k<<"";
+            }
+            else{
+                k--;
+                cout<<k<<"";
+            }
+        }
+        cnt=cnt+2;
+        cout<<endl;
+    }
+
+    return 0;
+}
+
+// Sample Input1 :
+// 1 
+// 5
+// Sample Output1 :
+//     1
+//   232
+//   34543
+//  4567654
+// 567898765
