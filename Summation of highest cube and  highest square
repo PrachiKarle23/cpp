@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int highestSq=0,highestCube=0;
+    for(int i=1;i<n;i++)
+    {
+         for(int j=1;j<n;j++)
+         {
+            int sq=j*j;
+            if(sq<=n)
+            {
+                highestSq=max(highestSq,sq); 
+            }
+            
+            int cube=j*j*j;
+            if(cube<=n)
+            {
+                highestCube=max(highestCube,cube);
+            }
+         }
+    }
+    cout<<highestSq+highestCube;
+    return 0;
+}
