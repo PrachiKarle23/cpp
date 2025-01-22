@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int a,b;
+    cin>>a>>b;
+    int temp1=a,temp2=b;
+    while(a!=b){
+        if(a>b){
+            a-=b;
+        }
+        else{
+            b-=a;
+        }
+    }
+    cout<<"HCF"<<a<<endl;
+    cout<<"LCM"<<(temp1*temp2)/a;
+    return 0;
+}
