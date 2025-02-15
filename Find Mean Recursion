@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+
+float findMean(int A[],int n)
+{
+    if(n==1){
+        return A[n-1];
+    }
+    
+    return ( (float) ( findMean(A, n-1) * (n-1) + A[n-1] )
+                                     / n);
+}
+int main() {
+    int n;
+    cin>>n;
+    int A[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>A[i];
+    }
+    
+    cout<<findMean(A,n);
+    return 0;
+}
