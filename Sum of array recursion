@@ -1,0 +1,15 @@
+class Solution {
+  public:
+    // Function to return sum of elements
+    int solve(vector<int>& arr,int n,int i)
+    {
+        if(i>=n){
+            return 0;
+        }
+        return arr[i]+solve(arr,n,i+1);
+    }
+    int arraySum(vector<int>& arr) {
+        int n=arr.size();
+        return solve(arr,n,0);
+    }
+};
