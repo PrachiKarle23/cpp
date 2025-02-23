@@ -1,0 +1,39 @@
+3. Joseph has been pondering about numbers in his digital logic class. He found a peculiar challenge where he must take a positive integer, convert it to binary, toggle all its bits starting from the most significant bit, and find the resulting decimal value. Can you assist him in this toggle challenge?
+Input
+
+A single integer 𝑁.
+
+Output
+
+The integer value after toggling all bits.
+
+Example
+
+Input:
+10
+
+Output:
+5
+
+
+
+#include <iostream>
+#include<bitset>
+#include<cmath>
+
+using namespace std;
+
+int main() {
+    int no;
+    cin>>no;
+    
+    string binary=bitset<32>(no).to_string();
+    binary=binary.substr(binary.find('1'));
+    for(int i=0;i<binary.length();i++)
+    {
+        binary[i]=(binary[i]=='1')?'0':'1';
+    }
+    
+    cout<<stoi(binary,nullptr,2);
+    return 0;
+}
