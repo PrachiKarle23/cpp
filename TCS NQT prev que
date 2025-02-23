@@ -1,0 +1,48 @@
+2. Jack loves Sundays. He wants to know how many Sundays will occur in a month starting on any given day. Given the starting day and the total number of days in the month, your task is to find out the number of Sundays.
+Input
+
+A string indicating the first day of the month (e.g., "mon") and an integer representing the total number of days in that month.
+Output
+
+The number of Sundays in that month.
+Example
+
+Input
+mon
+13
+
+Output
+2
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    string a;
+    cin>>a;
+    int days;
+    cin>>days;
+    
+    string weeks[7]={"mon","tue","wed","thu","fri","sat","sun"};
+    int offset[7]={6,5,4,3,2,1,0};
+    int start=-1;
+    for(int i=0;i<7;i++)
+    {
+        if(weeks[i]==a){
+            start=offset[i];
+            break;
+        }
+    }
+    int sundays=0;
+    for(int i=1;i<=days;i++)
+    {
+        if((start+i)%7==0)
+        {
+            sundays++;
+        }
+    }
+    cout<<sundays;
+    return 0;
+}
