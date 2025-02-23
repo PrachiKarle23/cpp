@@ -1,0 +1,62 @@
+4. You are given an array consisting of only three distinct integers: 0, 1, and 2. Your task is to sort the array in a single pass, such that all 0's come first, followed by all 1's, and then all 2's.
+Implement a function to achieve this and demonstrate its usage with an example.
+
+Input
+5
+2 0 1 2 0
+
+Output
+
+0 0 1 2 2
+
+
+#include <iostream>
+#include<bitset>
+#include<cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    int A[n];
+    int zero=0, one=0,two=0;
+    for(int i=0;i<n;i++)
+    {
+       int a;
+       cin>>a;
+       if(a==0){
+           zero++;
+       }
+       else if(a==1){
+           one++;
+       }
+       else{
+           two++;
+       }
+       A[i]=a;
+    }
+    
+    
+   for(int i=0;i<n;i++)
+   {
+       if(zero!=0){
+           A[i]=0;
+           zero--;
+       }
+       else if(one!=0){
+           A[i]=1;
+           one--;
+       }
+       else if(two!=0){
+           A[i]=2;
+           two--;
+       }
+   }
+   
+   
+   for(int i=0;i<n;i++)
+   {
+       cout<<A[i]<<" ";
+   }
+    return 0;
+}
