@@ -1,18 +1,18 @@
 #include <iostream>
-#include<cmath>
-
+#include <cmath>
 using namespace std;
+
 int main() {
-     int no ;
-     cin>>no;
-int ans=0,i=0;
-     while (no != 0) {
-        int rem = no % 2;
-        ans=ans+ rem * pow(10,i);
-        no = no / 2;
+    int no,i=0;
+    cin>>no;
+    string ans="";
+    while(no!=0)
+    {
+        int rem=no%2;
+        ans=to_string(rem * pow(10,i)) + ans;
+        no/=2;
         i++;
     }
-    
-    cout<<ans;
+    cout<<stoi(ans);
     return 0;
 }
